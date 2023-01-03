@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+
+  <body>
+    <div class="containerUpdate">
+      <%- include("./partials/header.ejs") %>
+
+      <h3 class="h-car">EDIT CAR:</h3>
+
+      <form action="/updateCar/<%= car.id  %>?_method=PUT" method="POST" enctype="multipart/form-data" class="formUpdate " >
+        <input type="file" name="image" class="mt-2">
+        <img src="../images/<%= car.image %>" class="img-fluid mt-1" alt="..." style="height:100px; " />
+
+        <input type="hidden" name="old_image" value="<%= car.image %> ">
+        <br />
+        <input type="text" name="name" id="name" placeholder="Car name here..." value="<%= car.name  %> " />
+        <br />
+        <input type="text" name="model" id="model" placeholder="Car model here..." value="<%= car.model  %> " />
+        <br />
+        <textarea type="text" name="description" id="description" placeholder="Car description here..." rows="5" cols="20" ><%= car.description  %> </textarea>
+        <br />
+        <input type="text" name="color" id="color"  placeholder="Car color here..."  value="<%= car.color %>"></input>
+        <br />
+        <input type="text" name="year" id="year" placeholder="e.g 2022"  value="<%= car.year %> " />
+        <br/>
+        <input type="text" name="price" id="price" placeholder="e.g 200$"  value="<%= car.price%> " />
+        <br/>
+
+        <button type="submit" class="btn btn-outline-primary updateBtn">Update</button>
+      </form>
+      
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

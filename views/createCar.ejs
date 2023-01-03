@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+
+  <body>
+    <div class="containerCreate">
+      <%- include("./partials/header.ejs") %>
+
+      <h3 class="h-car">ADD CAR FORM:</h3>
+
+ 
+            
+      <form action="/createCar" method="POST" enctype="multipart/form-data" class="formCreate mt-5">
+
+        <input type="file" name="image"  class="mt-3">
+        <br />
+        <input type="text" name="name" id="name" placeholder="Car name here..." />
+        <br />
+        <input type="text" name="model" id="model" placeholder="Car model here..." />
+        <br />
+        <textarea type="text" name="description" id="description" placeholder="Car description here..." rows="5" cols="20"></textarea>
+        <br />
+        <input type="text" name="color" id="color"  placeholder="Car color here..."></input>
+        <br />
+        <input type="text" name="year" id="year" placeholder="e.g 2022" />
+        <br/>
+        <input type="text" name="price" id="price" placeholder="e.g 200$" />
+        <br/>
+
+        <button type="submit" class="btn btn-outline-success updateBtn">ADD </button>
+
+      </form>
+
+
+    
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
