@@ -2,6 +2,8 @@ const carController = require("../controllers/carController");
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
+const authController = require("../controllers/auth");
+const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 // image upload
 const storage = multer.diskStorage({
@@ -25,5 +27,6 @@ router.get("/updateCar/:id", carController.getUpdateView);
 router.put("/updateCar/:id", upload.single("image"), carController.updateCar);
 
 router.get("/delete/:id", carController.deleteCar);
+
 
 module.exports = router;
