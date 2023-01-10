@@ -15,6 +15,10 @@ module.exports = {
     res.render("createCar");
   },
 
+  getDashboardView: (req, res) => {
+    res.render("dashboard");
+  },
+
   createCar: async (req, res) => {
     try {
       await Car.create({
@@ -102,4 +106,4 @@ module.exports = {
       console.log(error);
     }
   },
-};  
+};

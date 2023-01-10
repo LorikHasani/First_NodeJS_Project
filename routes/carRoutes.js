@@ -19,6 +19,9 @@ const upload = multer({
 });
 
 router.get("/", carController.getCarView);
+router.get("/dashboard", carController.getDashboardView);
+
+
 router.get("/createCar", carController.getCreateView);
 router.post("/createCar", upload.single("image"), carController.createCar);
 router.get("/:id", carController.getCarById);
@@ -27,6 +30,7 @@ router.get("/updateCar/:id", carController.getUpdateView);
 router.put("/updateCar/:id", upload.single("image"), carController.updateCar);
 
 router.get("/delete/:id", carController.deleteCar);
+
 
 
 module.exports = router;
